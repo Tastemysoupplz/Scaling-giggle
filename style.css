@@ -1,3 +1,6 @@
+@font-face{font-family:"GameFont";src:url("fonts/game-font.ttf") format("truetype"),url("fonts/game-font.otf") format("opentype");font-display:swap}
+@font-face{font-family:"Pixelify";src:url("fonts/vt323.ttf") format("truetype");font-weight:400;font-display:swap}
+:root{--pixel:"GameFont","Pixelify",system-ui,sans-serif}
 :root{--bg:#1d2030;--card:#262a3d;--text:#e8e6f0;--muted:#a9a8bd;--gold:#e3b341;--line:#383d57;--green:#6bbf59}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -41,3 +44,30 @@ footer a{color:var(--muted)}
 .policy .summary{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:1.5rem 0}
 .policy .summary strong{color:var(--gold)}
 .policy ul{padding-left:1.3rem}
+
+/* pixel font for display text, system font stays for body copy */
+nav .links a,h1,h2,h3,.btn,.tag,.card .ph{font-family:var(--pixel)}
+nav .links a{letter-spacing:.04em}
+h2{letter-spacing:.03em}
+nav .brand img{width:auto;height:44px;border-radius:0}
+nav .wrap{height:68px}
+.hero .logo{display:block;margin:0 auto;width:min(86vw,520px);height:auto;filter:drop-shadow(0 6px 0 rgba(10,12,30,.45))}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero{padding:44px 0 40px}
+
+/* stand-in pixel font sizing (VT323 runs small); the real game font replaces it automatically */
+h1,h2,h3,.btn,.tag,.card .ph,.facts strong{font-weight:400}
+h2{font-size:1.9rem}
+.card h3{font-size:1.6rem}
+.feature h3{font-size:1.9rem}
+.title-row h1{font-size:2.8rem}
+.btn{font-size:1.2rem}
+nav .links a{font-size:1.15rem}
+.facts strong{font-size:1.25rem}
+@media(max-width:520px){.title-row h1{font-size:2.4rem}}
+
+.card img.logo{background:linear-gradient(135deg,#2c3150,#4a3f6b);object-fit:contain}
+.card p{font-size:.96rem;line-height:1.55}
+
+.feature img.logo{background:linear-gradient(135deg,#2c3150,#4a3f6b);object-fit:contain}
+.card .btn{margin-top:12px;font-size:1.05rem;padding:8px 14px}
