@@ -1,0 +1,76 @@
+@font-face{font-family:"GameFont";src:url("game-font.ttf") format("truetype"),url("game-font.otf") format("opentype");font-display:swap}
+@font-face{font-family:"Pixelify";src:url("vt323.ttf") format("truetype");font-weight:400;font-display:swap}
+:root{--pixel:"GameFont","Pixelify",system-ui,sans-serif}
+:root{--bg:#1d2030;--card:#262a3d;--text:#e8e6f0;--muted:#a9a8bd;--gold:#e3b341;--line:#383d57;--green:#6bbf59}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:#8ecbff}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line);background:#181b29}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .brand{display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:800;letter-spacing:.12em;text-decoration:none;font-size:1.05rem}
+nav .brand img{width:30px;height:30px;border-radius:7px}
+nav .links a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:.95rem}
+nav .links a:hover{color:var(--text)}
+.hero{padding:72px 0 48px;text-align:center;background:linear-gradient(180deg,#1f2a56 0%,#5a4584 70%,#b9735f 100%)}
+.hero h1{margin:0;font-size:clamp(2.4rem,8vw,4rem);letter-spacing:.14em;color:var(--gold);text-shadow:0 4px 0 #0e1030}
+.hero p{margin:14px auto 0;max-width:560px;color:#f1ecfa;font-size:1.15rem}
+section{padding:48px 0}
+h2{color:var(--gold);font-size:1.5rem;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block}
+.card .ph{aspect-ratio:2/1;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2c3150,#383d62);color:var(--muted);font-weight:700;letter-spacing:.1em}
+.card .body{padding:16px 18px 20px}
+.card h3{margin:0 0 6px;font-size:1.2rem}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+.tag{display:inline-block;margin-top:12px;padding:2px 10px;border-radius:999px;font-size:.78rem;border:1px solid var(--line);color:var(--muted)}
+.tag.live{border-color:var(--green);color:var(--green)}
+.feature{display:grid;grid-template-columns:1fr;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.feature img{width:100%;display:block}
+.feature .body{padding:6px 22px 24px}
+.feature h3{margin:6px 0 8px;font-size:1.4rem}
+.feature p{margin:0 0 10px;color:var(--text)}
+.btn{display:inline-block;margin-top:6px;padding:10px 18px;border-radius:8px;background:var(--gold);color:#201a05;font-weight:700;text-decoration:none}
+.btn.off{background:#3b405c;color:var(--muted);cursor:default}
+footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:.9rem;text-align:center}
+footer a{color:var(--muted)}
+/* policy page */
+.policy{max-width:760px;margin:0 auto;padding:40px 20px 70px}
+.policy h1{font-size:2rem;color:var(--gold);margin:0 0 4px}
+.policy h2{font-size:1.2rem;margin:2.2rem 0 .5rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+.policy .meta{color:var(--muted);margin-bottom:1.5rem}
+.policy .summary{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:1.5rem 0}
+.policy .summary strong{color:var(--gold)}
+.policy ul{padding-left:1.3rem}
+
+/* pixel font for display text, system font stays for body copy */
+nav .links a,h1,h2,h3,.btn,.tag,.card .ph{font-family:var(--pixel)}
+nav .links a{letter-spacing:.04em}
+h2{letter-spacing:.03em}
+nav .brand img{width:auto;height:44px;border-radius:0}
+nav .wrap{height:68px}
+.hero .logo{display:block;margin:0 auto;width:min(86vw,520px);height:auto;filter:drop-shadow(0 6px 0 rgba(10,12,30,.45))}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero{padding:44px 0 40px}
+
+/* stand-in pixel font sizing (VT323 runs small); the real game font replaces it automatically */
+h1,h2,h3,.btn,.tag,.card .ph,.facts strong{font-weight:400}
+h2{font-size:1.9rem}
+.card h3{font-size:1.6rem}
+.feature h3{font-size:1.9rem}
+.title-row h1{font-size:2.8rem}
+.btn{font-size:1.2rem}
+nav .links a{font-size:1.15rem}
+.facts strong{font-size:1.25rem}
+@media(max-width:520px){.title-row h1{font-size:2.4rem}}
+
+.card img.logo{background:linear-gradient(135deg,#2c3150,#4a3f6b);object-fit:contain}
+.card p{font-size:.96rem;line-height:1.55}
+
+.feature img.logo{background:linear-gradient(135deg,#2c3150,#4a3f6b);object-fit:contain}
+.card .btn{margin-top:12px;font-size:1.05rem;padding:8px 14px}
+
+.policy h2{font-size:1.6rem}
+.policy h1{font-size:2.6rem}
